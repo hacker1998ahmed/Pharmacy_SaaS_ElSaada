@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - ElSaada Pharmacy</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>🏥 ElSaada</h2>
+        <p style="color: var(--text-secondary); font-size: 12px;">Pharmacy Management</p>
+      </div>
+      <ul class="sidebar-menu"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <h1>Reports & Analytics</h1>
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">A</div>
+          <div>
+            <div id="userName" style="font-weight: 600;">Admin</div>
+            <div id="userRole" style="font-size: 12px; color: var(--text-secondary);">Administrator</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Products</div>
+          <div class="stat-value" id="totalProducts">0</div>
+        </div>
+        
+        <div class="stat-card warning">
+          <div class="stat-label">Low Stock Items</div>
+          <div class="stat-value" id="lowStock">0</div>
+        </div>
+        
+        <div class="stat-card danger">
+          <div class="stat-label">Expiring Soon</div>
+          <div class="stat-value" id="expiringSoon">0</div>
+        </div>
+        
+        <div class="stat-card success">
+          <div class="stat-label">Today's Revenue</div>
+          <div class="stat-value" id="todayRevenue">EGP 0</div>
+        </div>
+      </div>
+
+      <!-- Sales Chart -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Sales Trend (Last 7 Days)</h3>
+          <select id="chartPeriod" onchange="loadChart()" style="padding: 8px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary);">
+            <option value="7">Last 7 Days</option>
+            <option value="30">Last 30 Days</option>
+          </select>
+        </div>
+        <canvas id="salesChart" width="800" height="300" style="background: var(--bg-dark); border-radius: 10px; padding: 20px;"></canvas>
+      </div>
+
+      <!-- Alerts Section -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">⚠️ Alerts & Notifications</h3>
+        </div>
+        <div id="alertsContainer">
+          <p class="text-center" style="color: var(--text-secondary)">Loading alerts...</p>
+        </div>
+      </div>
+
+      <!-- Recent Sales Table -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Recent Transactions</h3>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Invoice #</th>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Tax</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="recentSalesTable">
+              <tr><td colspan="7" class="text-center">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

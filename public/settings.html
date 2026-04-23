@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - ElSaada Pharmacy</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>🏥 ElSaada</h2>
+        <p style="color: var(--text-secondary); font-size: 12px;">Pharmacy Management</p>
+      </div>
+      <ul class="sidebar-menu"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <h1>Settings</h1>
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">A</div>
+          <div>
+            <div id="userName" style="font-weight: 600;">Admin</div>
+            <div id="userRole" style="font-size: 12px; color: var(--text-secondary);">Administrator</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+        <!-- Subscription Card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">💎 Subscription Plan</h3>
+          </div>
+          <div id="subscriptionInfo">
+            <p class="text-center" style="color: var(--text-secondary)">Loading...</p>
+          </div>
+        </div>
+
+        <!-- E-Invoice Settings -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🇪🇬 Egyptian E-Invoice</h3>
+          </div>
+          <form id="einvoiceForm">
+            <div class="form-group">
+              <label>Client ID</label>
+              <input type="text" id="einvoiceClientId" placeholder="Enter Client ID">
+            </div>
+            
+            <div class="form-group">
+              <label>Client Secret</label>
+              <input type="password" id="einvoiceClientSecret" placeholder="Enter Client Secret">
+            </div>
+            
+            <div class="form-group">
+              <label>Tax Registration Number</label>
+              <input type="text" id="einvoiceTaxNumber" placeholder="Enter Tax Number">
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Save E-Invoice Settings</button>
+          </form>
+          <p style="font-size: 12px; color: var(--text-secondary); margin-top: 15px;">
+            ℹ️ Configure your Egyptian Tax Authority eInvoicing credentials to submit invoices electronically.
+          </p>
+        </div>
+
+        <!-- Pharmacy Info -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🏪 Pharmacy Information</h3>
+          </div>
+          <form id="pharmacyForm">
+            <div class="form-group">
+              <label>Pharmacy Name</label>
+              <input type="text" id="pharmacyName" placeholder="Enter pharmacy name">
+            </div>
+            
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="pharmacyEmail" placeholder="Enter email">
+            </div>
+            
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="pharmacyPhone" placeholder="Enter phone number">
+            </div>
+            
+            <div class="form-group">
+              <label>Address</label>
+              <textarea id="pharmacyAddress" rows="3" placeholder="Enter address"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Update Information</button>
+          </form>
+        </div>
+
+        <!-- System Info -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">ℹ️ System Information</h3>
+          </div>
+          <div style="color: var(--text-secondary);">
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Database:</strong> SQLite</p>
+            <p><strong>Environment:</strong> Production Ready</p>
+            <p><strong>Mobile App:</strong> Capacitor Compatible</p>
+            <hr style="border-color: var(--border); margin: 15px 0;">
+            <p style="font-size: 12px;">
+              <strong>Default Login:</strong><br>
+              Username: admin<br>
+              Password: admin123
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
