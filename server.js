@@ -14,6 +14,8 @@ const einvoiceRoutes = require('./routes/einvoice');
 const subscriptionRoutes = require('./routes/subscription');
 const reportsRoutes = require('./routes/reports');
 const supplierRoutes = require('./routes/suppliers');
+const purchaseRoutes = require('./routes/purchases');
+const userRoutes = require('./routes/users');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -60,6 +62,8 @@ app.use('/api/einvoice', einvoiceRoutes);
 app.use('/api/subscription', subscriptionRoutes);
 app.use('/api/reports', reportsRoutes);
 app.use('/api/suppliers', supplierRoutes);
+app.use('/api/purchases', purchaseRoutes);
+app.use('/api/users', userRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
