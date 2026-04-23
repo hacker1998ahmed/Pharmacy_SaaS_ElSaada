@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS - ElSaada Pharmacy</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>🏥 ElSaada</h2>
+        <p style="color: var(--text-secondary); font-size: 12px;">Pharmacy Management</p>
+      </div>
+      <ul class="sidebar-menu"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <h1>Point of Sale</h1>
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">A</div>
+          <div>
+            <div id="userName" style="font-weight: 600;">Admin</div>
+            <div id="userRole" style="font-size: 12px; color: var(--text-secondary);">Cashier</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pos-container">
+        <!-- Products Section -->
+        <div class="products-section">
+          <!-- Barcode Scanner -->
+          <div class="search-bar">
+            <input type="text" id="barcodeInput" placeholder="Scan or enter barcode (press Enter)">
+            <button class="btn btn-secondary" onclick="document.getElementById('scanner').classList.toggle('hidden')">📷 Camera</button>
+          </div>
+          
+          <div id="scanner" class="hidden mb-2"></div>
+
+          <!-- Product Search -->
+          <div class="search-bar">
+            <input type="text" id="productSearch" placeholder="Search products..." oninput="filterPOSProducts(this.value)">
+          </div>
+
+          <!-- Product Grid -->
+          <div class="product-grid" id="posProductGrid">
+            <div class="text-center" style="grid-column: 1/-1; padding: 40px;">
+              <div class="spinner" style="margin: 0 auto;"></div>
+              <p class="mt-1">Loading products...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+          <h3 style="margin-bottom: 15px;">🛒 Shopping Cart</h3>
+          
+          <div class="form-group">
+            <label>Customer Name (Optional)</label>
+            <input type="text" id="customerName" placeholder="Enter customer name">
+          </div>
+
+          <div class="cart-items" id="cartItems">
+            <p class="text-center" style="color:var(--text-secondary)">Cart is empty</p>
+          </div>
+
+          <div class="cart-total">
+            <div class="total-row">
+              <span>Subtotal:</span>
+              <span id="cartSubtotal">EGP 0.00</span>
+            </div>
+            <div class="total-row">
+              <span>Tax (14%):</span>
+              <span id="cartTax">EGP 0.00</span>
+            </div>
+            <div class="total-row final">
+              <span>Total:</span>
+              <span id="cartTotal">EGP 0.00</span>
+            </div>
+          </div>
+
+          <div class="form-group mt-1">
+            <label>Payment Method</label>
+            <select id="paymentMethod">
+              <option value="cash">Cash</option>
+              <option value="card">Card</option>
+              <option value="mixed">Mixed</option>
+            </select>
+          </div>
+
+          <div class="flex gap-1 mt-1">
+            <button class="btn btn-success btn-block" id="checkoutBtn" style="flex: 2;">
+              ✓ Checkout
+            </button>
+            <button class="btn btn-danger" id="clearCartBtn" style="flex: 1;">
+              ✕ Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

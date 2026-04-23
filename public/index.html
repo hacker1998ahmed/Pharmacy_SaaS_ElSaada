@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElSaada Pharmacy - Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>🏥 ElSaada</h2>
+        <p style="color: var(--text-secondary); font-size: 12px;">Pharmacy Management</p>
+      </div>
+      <ul class="sidebar-menu">
+        <!-- Menu items loaded by JS -->
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <h1>Dashboard</h1>
+        <div class="user-info">
+          <span id="planBadge" class="badge badge-primary">FREE</span>
+          <div class="user-avatar" id="userAvatar">A</div>
+          <div>
+            <div id="userName" style="font-weight: 600;">Admin</div>
+            <div id="userRole" style="font-size: 12px; color: var(--text-secondary);">Administrator</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div id="alertsContainer"></div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Products</div>
+          <div class="stat-value" id="totalProducts">0</div>
+        </div>
+        
+        <div class="stat-card warning">
+          <div class="stat-label">Low Stock Items</div>
+          <div class="stat-value" id="lowStock">0</div>
+        </div>
+        
+        <div class="stat-card danger">
+          <div class="stat-label">Expiring Soon</div>
+          <div class="stat-value" id="expiringSoon">0</div>
+        </div>
+        
+        <div class="stat-card success">
+          <div class="stat-label">Today's Sales</div>
+          <div class="stat-value" id="todaySales">0</div>
+        </div>
+        
+        <div class="stat-card success">
+          <div class="stat-label">Today's Revenue</div>
+          <div class="stat-value" id="todayRevenue">EGP 0</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-label">Monthly Revenue</div>
+          <div class="stat-value" id="monthRevenue">EGP 0</div>
+        </div>
+      </div>
+
+      <!-- Recent Sales -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Recent Sales</h3>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Invoice #</th>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="recentSalesTable">
+              <tr><td colspan="5" class="text-center">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
