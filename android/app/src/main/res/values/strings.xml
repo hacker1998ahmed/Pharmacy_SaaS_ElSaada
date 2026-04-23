@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ElSaada Pharmacy</string>
+    <string name="title_activity_main">ElSaada Pharmacy</string>
+    <string name="package_name">com.elsaada.pharmacy</string>
+    <string name="custom_url_scheme">com.elsaada.pharmacy</string>
+</resources>
