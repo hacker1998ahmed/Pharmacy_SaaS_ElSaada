@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="10" fill="#f1f5f9"/>
+  <circle cx="100" cy="80" r="40" fill="#e2e8f0"/>
+  <rect x="70" y="130" width="60" height="50" rx="5" fill="#e2e8f0"/>
+  <text x="100" y="190" font-family="Arial" font-size="12" fill="#94a3b8" text-anchor="middle">صورة المنتج</text>
+</svg>
